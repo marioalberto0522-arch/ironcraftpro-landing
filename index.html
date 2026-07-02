@@ -473,6 +473,10 @@
 
   <!-- TOP INSTALL CTA -->
   <section style="padding: 0 20px 48px; max-width: 480px; margin: 0 auto; text-align: center;">
+    <div id="top-cta-android-inapp" style="display:none;">
+      <a href="intent://ironcraftpro.lemuslegacy.com#Intent;scheme=https;package=com.android.chrome;end" class="btn-install" style="max-width:340px;margin:0 auto 8px;display:block;text-decoration:none;text-align:center;">OPEN IN CHROME TO INSTALL</a>
+      <p style="font-size:12px;color:var(--text3);margin-top:8px;">Chrome required to install on Android</p>
+    </div>
     <div id="top-cta-android" style="display:none;">
       <button class="btn-install" id="top-android-btn" style="max-width:340px;margin:0 auto 10px;">⬇ INSTALL FREE — ANDROID</button>
       <a href="https://ironcraftpro-app.vercel.app" target="_blank" class="btn-install-sub" style="max-width:340px;margin:0 auto 10px;">OPEN IN BROWSER</a>
@@ -482,6 +486,10 @@
       <a href="https://ironcraftpro-app.vercel.app" target="_blank" class="btn-install" style="max-width:340px;margin:0 auto 8px;display:block;">OPEN IN SAFARI TO INSTALL →</a>
       <p style="font-size:12px;color:var(--text3);margin-top:8px;">Safari → Share → Add to Home Screen</p>
       <a href="https://buy.stripe.com/cNi6oIequbOvejsbSUcs801" target="_blank" class="btn-install-sub" style="max-width:340px;margin:8px auto 0;display:block;border-color:var(--gold);color:var(--gold);">SUBSCRIBE — $29/MO</a>
+    </div>
+    <div id="top-cta-ios-chrome" style="display:none;">
+      <button onclick="navigator.clipboard.writeText('https://ironcraftpro.lemuslegacy.com').then(()=>{this.textContent='✓ LINK COPIED — OPEN SAFARI';setTimeout(()=>this.textContent='COPY LINK → OPEN IN SAFARI',2000)})" class="btn-install" style="max-width:340px;margin:0 auto 8px;display:block;">COPY LINK → OPEN IN SAFARI</button>
+      <p style="font-size:12px;color:var(--text3);margin-top:8px;">Paste in Safari → Share → Add to Home Screen</p>
     </div>
     <div id="top-cta-desktop" style="display:none;">
       <a href="https://ironcraftpro-app.vercel.app" target="_blank" class="btn-install" style="max-width:340px;margin:0 auto 10px;display:block;">OPEN APP ON YOUR PHONE →</a>
@@ -659,6 +667,31 @@
       <div class="divider"></div>
 
       <!-- ANDROID -->
+      <div class="android-block" id="android-inapp-block" style="display:none; padding:20px; text-align:center;">
+        <div style="font-size:40px; margin-bottom:16px;">🌐</div>
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--gold); margin-bottom:10px; letter-spacing:0.05em;">OPEN IN CHROME TO INSTALL</div>
+        <div style="font-size:14px; color:var(--text2); margin-bottom:24px; line-height:1.6;">
+          TikTok's built-in browser can't install apps.<br/>
+          You need Chrome to add IronCraftPro to your home screen.
+        </div>
+        <div style="background:var(--surface2); border:1px solid var(--border); border-radius:12px; padding:16px; margin-bottom:20px; text-align:left;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:var(--gold); color:#000; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0;">1</div>
+            <div style="font-size:14px; color:var(--text);">Tap the <strong style="color:var(--gold);">⋮ menu</strong> or share icon in your browser</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:var(--gold); color:#000; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0;">2</div>
+            <div style="font-size:14px; color:var(--text);">Select <strong style="color:var(--gold);">Open in Chrome</strong></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:var(--gold); color:#000; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0;">3</div>
+            <div style="font-size:14px; color:var(--text);">Tap <strong style="color:var(--gold);">Install</strong> when prompted</div>
+          </div>
+        </div>
+        <a href="intent://ironcraftpro.lemuslegacy.com#Intent;scheme=https;package=com.android.chrome;end" class="btn-install" style="display:block;max-width:340px;margin:0 auto 10px;text-decoration:none;text-align:center;">OPEN IN CHROME</a>
+        <a href="https://buy.stripe.com/cNi6oIequbOvejsbSUcs801" target="_blank" class="btn-install-sub" style="display:block;max-width:340px;margin:0 auto;border-color:var(--gold);color:var(--gold);text-decoration:none;text-align:center;">SUBSCRIBE — $29/MO</a>
+      </div>
+
       <div class="android-block" id="android-block">
         <button class="btn-install" id="android-install-btn">⬇ INSTALL APP</button>
         <a class="btn-install-sub" href="https://ironcraftpro-app.vercel.app" target="_blank">OPEN IN BROWSER INSTEAD</a>
@@ -666,6 +699,31 @@
       </div>
 
       <!-- IOS -->
+      <div class="android-block" id="ios-chrome-block" style="display:none; padding:20px; text-align:center;">
+        <div style="font-size:40px; margin-bottom:16px;">🧭</div>
+        <div style="font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--gold); margin-bottom:10px; letter-spacing:0.05em;">OPEN IN SAFARI TO INSTALL</div>
+        <div style="font-size:14px; color:var(--text2); margin-bottom:24px; line-height:1.6;">
+          TikTok and Chrome on iPhone can't install apps.<br/>
+          You need Safari to add IronCraftPro to your home screen.
+        </div>
+        <div style="background:var(--surface2); border:1px solid var(--border); border-radius:12px; padding:16px; margin-bottom:20px; text-align:left;">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:var(--gold); color:#000; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0;">1</div>
+            <div style="font-size:14px; color:var(--text);">Copy this link: <strong style="color:var(--gold);">ironcraftpro.lemuslegacy.com</strong></div>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:var(--gold); color:#000; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0;">2</div>
+            <div style="font-size:14px; color:var(--text);">Open <strong style="color:var(--gold);">Safari</strong> on your iPhone</div>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:var(--gold); color:#000; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0;">3</div>
+            <div style="font-size:14px; color:var(--text);">Paste the link → tap <strong style="color:var(--gold);">Share → Add to Home Screen</strong></div>
+          </div>
+        </div>
+        <button onclick="navigator.clipboard.writeText('https://ironcraftpro.lemuslegacy.com').then(()=>{this.textContent='✓ COPIED!';setTimeout(()=>this.textContent='COPY LINK',2000)})" style="width:100%; max-width:340px; padding:14px; background:var(--gold); color:#000; border:none; border-radius:10px; font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:2px; cursor:pointer; margin-bottom:10px;">COPY LINK</button>
+        <a href="https://buy.stripe.com/cNi6oIequbOvejsbSUcs801" target="_blank" style="display:block; width:100%; max-width:340px; margin:0 auto; padding:12px; background:transparent; color:var(--gold); border:1px solid var(--gold); border-radius:10px; font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:2px; text-align:center; text-decoration:none;">SUBSCRIBE — $29/MO</a>
+      </div>
+
       <div class="ios-block" id="ios-block">
         <ul class="step-list">
           <li class="step-item">
@@ -811,31 +869,45 @@
       const isAndroid = /Android/i.test(ua);
 
       if (isAndroid) {
-        showBlock('android-block');
-        // Top CTA
-        document.getElementById('top-cta-android').style.display = 'block';
-        const topBtn = document.getElementById('top-android-btn');
-        const mainBtn = document.getElementById('android-install-btn');
-        const handleInstall = async () => {
-          if (deferredPrompt) {
-            deferredPrompt.prompt();
-            const { outcome } = await deferredPrompt.userChoice;
-            if (outcome === 'accepted') {
-              topBtn.textContent = '✓ INSTALLING...';
-              mainBtn.textContent = '✓ INSTALLING...';
-              topBtn.style.opacity = '0.7';
-              mainBtn.style.opacity = '0.7';
+        // Detect in-app browsers (TikTok, Instagram, Facebook, etc.)
+        const isInAppBrowser = /FBAN|FBAV|Instagram|TikTok|BytedanceWebview|Musical|Twitter|Line|MicroMessenger|WebView|wv/i.test(ua) || (ua.includes('Android') && !ua.includes('Chrome/'));
+        const isRealChrome = !isInAppBrowser && ua.includes('Chrome/') && !ua.includes('Chromium/');
+
+        if (isInAppBrowser || (!isRealChrome && !deferredPrompt)) {
+          showBlock('android-inapp-block');
+          document.getElementById('top-cta-android-inapp').style.display = 'block';
+        } else {
+          showBlock('android-block');
+          document.getElementById('top-cta-android').style.display = 'block';
+          const topBtn = document.getElementById('top-android-btn');
+          const mainBtn = document.getElementById('android-install-btn');
+          const handleInstall = async () => {
+            if (deferredPrompt) {
+              deferredPrompt.prompt();
+              const { outcome } = await deferredPrompt.userChoice;
+              if (outcome === 'accepted') {
+                topBtn.textContent = '✓ INSTALLING...';
+                mainBtn.textContent = '✓ INSTALLING...';
+                topBtn.style.opacity = '0.7';
+                mainBtn.style.opacity = '0.7';
+              }
+              deferredPrompt = null;
+            } else {
+              window.open('https://ironcraftpro.lemuslegacy.com', '_blank');
             }
-            deferredPrompt = null;
-          } else {
-            window.location.href = APP_URL;
-          }
-        };
-        topBtn.addEventListener('click', handleInstall);
-        mainBtn.addEventListener('click', handleInstall);
+          };
+          topBtn.addEventListener('click', handleInstall);
+          mainBtn.addEventListener('click', handleInstall);
+        }
       } else if (isIOS) {
-        showBlock('ios-block');
-        document.getElementById('top-cta-ios').style.display = 'block';
+        const isSafari = /^((?!chrome|android).)*safari/i.test(ua);
+        if (isSafari) {
+          showBlock('ios-block');
+          document.getElementById('top-cta-ios').style.display = 'block';
+        } else {
+          showBlock('ios-chrome-block');
+          document.getElementById('top-cta-ios-chrome').style.display = 'block';
+        }
       } else {
         showBlock('desktop-block');
         document.getElementById('top-cta-desktop').style.display = 'block';
