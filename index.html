@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IronCraftPro — Built for the Trade</title>
+  <meta name="description" content="The complete business operating system for ornamental ironworkers. Track leads, auto-generate contracts, manage jobs, and run your shop — all from your phone."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --surface2: #1c1c1c;
+      --gold: #C9A84C;
+      --gold-dim: rgba(201,168,76,0.15);
+      --gold-glow: rgba(201,168,76,0.08);
+      --border: #2a2a2a;
+      --border2: #333;
+      --text: #efefef;
+      --text2: #999;
+      --text3: #555;
+      --green: #4caf7d;
+      --r: 12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── BANNER ── */
+    .banner {
+      background: var(--gold);
+      color: #0a0a0a;
+      text-align: center;
+      padding: 10px 16px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 52px 24px 40px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .logo-mark {
+      width: 64px; height: 64px;
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(44px, 11vw, 68px);
+      letter-spacing: 0.05em;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .hero h1 span { color: var(--gold); }
+
+    .hero-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text2);
+      margin-bottom: 18px;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--text2);
+      max-width: 360px;
+      margin: 0 auto 28px;
+      line-height: 1.65;
+    }
+
+    .hero-desc strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text3);
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .gold-line {
+      width: 36px; height: 2px;
+      background: var(--gold);
+      margin: 0 auto 24px;
+      border-radius: 1px;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 0.06em;
+      color: var(--text);
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .section-desc {
+      font-size: 14px;
+      color: var(--text2);
+      text-align: center;
+      max-width: 320px;
+      margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+
+    /* ── FEATURES ── */
+    .features-section {
+      padding: 48px 20px;
+      max-width: 520px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+    }
+
+    .feature-group {
+      margin-bottom: 32px;
+    }
+
+    .feature-group-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 16px;
+      margin-bottom: 8px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .feature-icon {
+      font-size: 22px;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .feature-text h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      margin-bottom: 3px;
+      text-transform: uppercase;
+    }
+
+    .feature-text p {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.55;
+    }
+
+    .coming-soon {
+      display: inline-block;
+      background: var(--gold-dim);
+      border: 1px solid rgba(201,168,76,0.25);
+      color: var(--gold);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    /* ── PHASE FLOW ── */
+    .phase-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 8px;
+    }
+
+    .phase-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0;
+      border-bottom: none;
+    }
+
+    .phase-row:first-child { border-radius: var(--r) var(--r) 0 0; }
+    .phase-row:last-child { border-radius: 0 0 var(--r) var(--r); border-bottom: 1px solid var(--border); }
+
+    .phase-num {
+      width: 22px; height: 22px;
+      background: var(--gold-dim);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .phase-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text);
+      flex: 1;
+    }
+
+    .phase-detail {
+      font-size: 12px;
+      color: var(--text3);
+      text-align: right;
+    }
+
+    /* ── INSTALL SECTION ── */
+    .install-section {
+      padding: 48px 20px 64px;
+      max-width: 480px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+    }
+
+    .install-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+    }
+
+    .install-header {
+      padding: 24px 20px 0;
+      text-align: center;
+    }
+
+    .install-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 24px;
+      letter-spacing: 0.06em;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .install-header p {
+      font-size: 13px;
+      color: var(--text2);
+      margin-bottom: 20px;
+    }
+
+    .divider { height: 1px; background: var(--border); margin: 0 20px; }
+
+    /* Android */
+    .android-block { padding: 20px; display: none; }
+
+    .btn-install {
+      display: block; width: 100%;
+      background: var(--gold); color: #0a0a0a;
+      border: none; border-radius: 10px; padding: 16px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px; letter-spacing: 0.06em;
+      cursor: pointer; transition: opacity 0.15s;
+    }
+    .btn-install:hover { opacity: 0.88; }
+
+    .btn-install-sub {
+      display: block; width: 100%;
+      background: transparent; color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.3); border-radius: 10px;
+      padding: 14px; font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px; letter-spacing: 0.06em;
+      cursor: pointer; margin-top: 10px;
+      text-decoration: none; text-align: center;
+      transition: border-color 0.15s;
+    }
+    .btn-install-sub:hover { border-color: var(--gold); }
+
+    /* iOS */
+    .ios-block { padding: 20px; display: none; }
+
+    .step-list { list-style: none; }
+
+    .step-item {
+      display: flex; align-items: flex-start;
+      gap: 14px; padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step-item:last-child { border-bottom: none; }
+
+    .step-num {
+      width: 28px; height: 28px;
+      background: var(--gold-dim);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px; color: var(--gold);
+      flex-shrink: 0; margin-top: 1px;
+    }
+
+    .step-content strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px; font-weight: 600;
+      color: var(--text); letter-spacing: 0.02em; margin-bottom: 2px;
+    }
+    .step-content span { font-size: 13px; color: var(--text2); line-height: 1.5; }
+
+    .step-icon {
+      display: inline-block;
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      border-radius: 6px; padding: 2px 8px;
+      font-size: 12px; color: var(--text);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; margin-top: 4px; letter-spacing: 0.02em;
+    }
+
+    .ios-open-btn {
+      display: block; width: 100%;
+      background: var(--gold); color: #0a0a0a;
+      border: none; border-radius: 10px; padding: 16px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px; letter-spacing: 0.06em;
+      cursor: pointer; margin-top: 4px;
+      text-decoration: none; text-align: center;
+      transition: opacity 0.15s;
+    }
+    .ios-open-btn:hover { opacity: 0.88; }
+
+    /* Desktop */
+    .desktop-block { padding: 20px; display: none; }
+
+    .qr-wrap {
+      background: #fff; border-radius: 10px;
+      width: 160px; height: 160px;
+      margin: 0 auto 16px;
+      display: flex; align-items: center; justify-content: center;
+      padding: 12px;
+    }
+    .qr-wrap svg { width: 136px; height: 136px; }
+
+    .desktop-url {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px; color: var(--gold);
+      text-align: center; letter-spacing: 0.04em; margin-bottom: 6px;
+    }
+    .desktop-hint { font-size: 12px; color: var(--text3); text-align: center; }
+
+    /* ── PROOF ── */
+    .proof-section {
+      border-top: 1px solid var(--border);
+      padding: 40px 20px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .proof-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 16px;
+    }
+
+    .proof-card .num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px; color: var(--gold);
+      letter-spacing: 0.02em; line-height: 1; margin-bottom: 4px;
+    }
+
+    .proof-card .lbl {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px; color: var(--text2);
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px; text-align: center;
+    }
+    footer p { font-size: 12px; color: var(--text3); line-height: 1.8; }
+    footer a { color: var(--text2); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <!-- BANNER -->
+  <div class="banner">
+    🔩 Coming to the App Store &amp; Google Play — Download Free Today
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="logo-mark">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="14" y="2" width="4" height="28" rx="2" fill="#C9A84C"/>
+        <rect x="2" y="14" width="28" height="4" rx="2" fill="#C9A84C" opacity="0.5"/>
+        <circle cx="16" cy="16" r="4" fill="#C9A84C"/>
+      </svg>
+    </div>
+    <h1>IRON<span>CRAFT</span>PRO</h1>
+    <p class="hero-sub">Built for the Trade</p>
+    <p class="hero-desc">
+      The <strong>complete business operating system</strong> for ornamental ironworkers. From the first call to the final invoice — everything runs through one app.
+    </p>
+  </section>
+
+  <!-- TOP INSTALL CTA -->
+  <section style="padding: 0 20px 48px; max-width: 480px; margin: 0 auto; text-align: center;">
+    <div id="top-cta-android" style="display:none;">
+      <button class="btn-install" id="top-android-btn" style="max-width:340px;margin:0 auto 10px;">⬇ INSTALL FREE — ANDROID</button>
+      <a href="https://ironcraftpro-app.vercel.app" target="_blank" class="btn-install-sub" style="max-width:340px;margin:0 auto 10px;">OPEN IN BROWSER</a>
+      <a href="https://buy.stripe.com/cNi6oIequbOvejsbSUcs801" target="_blank" class="btn-install-sub" style="max-width:340px;margin:0 auto;border-color:var(--gold);color:var(--gold);">SUBSCRIBE — $29/MO</a>
+    </div>
+    <div id="top-cta-ios" style="display:none;">
+      <a href="https://ironcraftpro-app.vercel.app" target="_blank" class="btn-install" style="max-width:340px;margin:0 auto 8px;display:block;">OPEN IN SAFARI TO INSTALL →</a>
+      <p style="font-size:12px;color:var(--text3);margin-top:8px;">Safari → Share → Add to Home Screen</p>
+      <a href="https://buy.stripe.com/cNi6oIequbOvejsbSUcs801" target="_blank" class="btn-install-sub" style="max-width:340px;margin:8px auto 0;display:block;border-color:var(--gold);color:var(--gold);">SUBSCRIBE — $29/MO</a>
+    </div>
+    <div id="top-cta-desktop" style="display:none;">
+      <a href="https://ironcraftpro-app.vercel.app" target="_blank" class="btn-install" style="max-width:340px;margin:0 auto 10px;display:block;">OPEN APP ON YOUR PHONE →</a>
+      <a href="https://buy.stripe.com/cNi6oIequbOvejsbSUcs801" target="_blank" class="btn-install-sub" style="max-width:340px;margin:0 auto;display:block;border-color:var(--gold);color:var(--gold);">SUBSCRIBE — $29/MO</a>
+      <p style="font-size:12px;color:var(--text3);margin-top:8px;">Best experienced on mobile</p>
+    </div>
+    <p style="font-size:12px;color:var(--text3);margin-top:12px;">$29/mo · 3 jobs free · Cancel anytime</p>
+  </section>
+  <section class="features-section">
+
+    <p class="section-label">What's inside</p>
+    <div class="gold-line"></div>
+    <h2 class="section-title">EVERYTHING YOUR SHOP NEEDS</h2>
+    <p class="section-desc">Built by an ironworker who got tired of running a trade business on sticky notes and handshake deals.</p>
+
+    <!-- JOB MANAGEMENT -->
+    <div class="feature-group">
+      <div class="feature-group-title">Job Management</div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🏗️</div>
+        <div class="feature-text">
+          <h3>6-Phase Job Workflow</h3>
+          <p>Every job moves through First Contact → Site Visit → Estimate → Contract → Final Payment → Maintenance. Nothing falls through the cracks.</p>
+        </div>
+      </div>
+
+      <div class="phase-flow">
+        <div class="phase-row"><div class="phase-num">1</div><div class="phase-name">First Contact</div><div class="phase-detail">Lead capture</div></div>
+        <div class="phase-row"><div class="phase-num">2</div><div class="phase-name">Site Visit</div><div class="phase-detail">Measurements + soil</div></div>
+        <div class="phase-row"><div class="phase-num">3</div><div class="phase-name">Estimate</div><div class="phase-detail">Materials + labor</div></div>
+        <div class="phase-row"><div class="phase-num">4</div><div class="phase-name">Contract</div><div class="phase-detail">Auto-generated PDF</div></div>
+        <div class="phase-row"><div class="phase-num">5</div><div class="phase-name">Final Payment</div><div class="phase-detail">Final payment form</div></div>
+        <div class="phase-row"><div class="phase-num">6</div><div class="phase-name">Maintenance</div><div class="phase-detail">Recurring revenue</div></div>
+      </div>
+
+    </div>
+
+    <!-- DOCUMENTS -->
+    <div class="feature-group">
+      <div class="feature-group-title">Auto-Generated Documents</div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📄</div>
+        <div class="feature-text">
+          <h3>Professional Contracts — In Seconds</h3>
+          <p>Fill in the job details and your contract is built automatically. Payment terms, warranty clauses, scope of work — all pre-structured for the trade.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <div class="feature-text">
+          <h3>Change Order Forms</h3>
+          <p>Scope creep is real. Generate a change order on the spot with the new cost, reason, and live running total — then share it directly from your phone.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">💳</div>
+        <div class="feature-text">
+          <h3>Final Invoice</h3>
+          <p>Send a clean final invoice with the remaining balance calculated from the contract total. No math, no guessing.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🛠️</div>
+        <div class="feature-text">
+          <h3>Maintenance Agreement</h3>
+          <p>Two-page maintenance contract with inspection checklist — Pass / Fail / N/A — built for recurring service clients.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BUSINESS TOOLS -->
+    <div class="feature-group">
+      <div class="feature-group-title">Business Tools</div>
+
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <div class="feature-text">
+          <h3>Shop Rate Calculator</h3>
+          <p>Enter your overhead, billable hours, and markup percentage. Get your exact shop rate per hour — so you stop guessing and start pricing to win.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📐</div>
+        <div class="feature-text">
+          <h3>Linear Foot Reference</h3>
+          <p>Quick pricing reference by material type — flat bar, square bar, round bar, tube. Built for field estimates when you need numbers fast.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <div class="feature-text">
+          <h3>Sales Scripts</h3>
+          <p>Inquiry, proposals, objections, upsell, follow-up, and reputation scripts — written for ironworkers, not salespeople.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📅</div>
+        <div class="feature-text">
+          <h3>Schedule & Agenda Tracker</h3>
+          <p>Calendar view tied to your active jobs. Daily "Today" view, conflict detection, and push notifications so no site visit ever gets missed.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FIELD TOOLS -->
+    <div class="feature-group">
+      <div class="feature-group-title">Field Tools</div>
+
+      <div class="feature-card">
+        <div class="feature-icon">⚙️</div>
+        <div class="feature-text">
+          <h3>Rust Prevention Guide</h3>
+          <p>System A and System B coating protocols with product-specific steps. Know exactly what to apply, in what order, on any surface condition.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">✅</div>
+        <div class="feature-text">
+          <h3>Finish Approval & Punch List</h3>
+          <p>Field forms built for the trade — walk a job with the client, document approvals, and close out clean every time.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DESIGN & CLIENT -->
+    <div class="feature-group">
+      <div class="feature-group-title">Design & Client Presentation</div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🖼️</div>
+        <div class="feature-text">
+          <h3>Design Catalog with Shareable Link</h3>
+          <p>Build your own portfolio inside the app. When a client asks "what have you built?" — send them a link to your catalog in seconds.</p>
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🌐</div>
+        <div class="feature-text">
+          <h3>Bilingual EN / ES</h3>
+          <p>Switch the entire app between English and Spanish in one tap. Built for the real workforce in the field.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- INSTALL -->
+  <section class="install-section">
+
+    <p class="section-label">Get the app</p>
+    <div class="gold-line"></div>
+    <h2 class="section-title">ADD TO YOUR PHONE</h2>
+    <p class="section-desc">Free to install · Works like a native app · No App Store required yet</p>
+
+    <div class="install-card">
+      <div class="install-header">
+        <h2>INSTALL IRONCRAFTPRO</h2>
+        <p>$29/month · Cancel anytime · 3 jobs free to start</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- ANDROID -->
+      <div class="android-block" id="android-block">
+        <button class="btn-install" id="android-install-btn">⬇ INSTALL APP</button>
+        <a class="btn-install-sub" href="https://ironcraftpro-app.vercel.app" target="_blank">OPEN IN BROWSER INSTEAD</a>
+        <p style="font-size:12px;color:var(--text3);text-align:center;margin-top:12px;">Tap Install → Add to Home Screen when prompted</p>
+      </div>
+
+      <!-- IOS -->
+      <div class="ios-block" id="ios-block">
+        <ul class="step-list">
+          <li class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <strong>Open in Safari</strong>
+              <span>Must be Safari — not Chrome or another browser.</span>
+              <br><span class="step-icon">⬇ Open in Safari</span>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <strong>Tap the Share button</strong>
+              <span>The box with an arrow pointing up at the bottom of Safari.</span>
+              <br><span class="step-icon">□↑ Share</span>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <strong>Tap "Add to Home Screen"</strong>
+              <span>Scroll down in the Share menu, tap Add to Home Screen, then tap Add.</span>
+              <br><span class="step-icon">⊞ Add to Home Screen</span>
+            </div>
+          </li>
+        </ul>
+        <a class="ios-open-btn" href="https://ironcraftpro-app.vercel.app" target="_blank">OPEN IN SAFARI →</a>
+        <p style="font-size:12px;color:var(--text3);text-align:center;margin-top:12px;">Takes 30 seconds · No App Store required</p>
+      </div>
+
+      <!-- DESKTOP -->
+      <div class="desktop-block" id="desktop-block">
+        <p style="font-size:13px;color:var(--text2);text-align:center;margin-bottom:16px;">Scan with your phone camera to install</p>
+        <div class="qr-wrap">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+            <rect width="200" height="200" fill="white"/>
+            <rect x="10" y="10" width="50" height="50" fill="#000" rx="4"/>
+            <rect x="18" y="18" width="34" height="34" fill="#fff"/>
+            <rect x="24" y="24" width="22" height="22" fill="#000"/>
+            <rect x="140" y="10" width="50" height="50" fill="#000" rx="4"/>
+            <rect x="148" y="18" width="34" height="34" fill="#fff"/>
+            <rect x="154" y="24" width="22" height="22" fill="#000"/>
+            <rect x="10" y="140" width="50" height="50" fill="#000" rx="4"/>
+            <rect x="18" y="148" width="34" height="34" fill="#fff"/>
+            <rect x="24" y="154" width="22" height="22" fill="#000"/>
+            <rect x="70" y="10" width="8" height="8" fill="#000"/>
+            <rect x="86" y="10" width="8" height="8" fill="#000"/>
+            <rect x="102" y="10" width="8" height="8" fill="#000"/>
+            <rect x="118" y="10" width="8" height="8" fill="#000"/>
+            <rect x="70" y="26" width="8" height="8" fill="#000"/>
+            <rect x="102" y="26" width="8" height="8" fill="#000"/>
+            <rect x="70" y="42" width="8" height="8" fill="#000"/>
+            <rect x="86" y="42" width="8" height="8" fill="#000"/>
+            <rect x="118" y="42" width="8" height="8" fill="#000"/>
+            <rect x="10" y="70" width="8" height="8" fill="#000"/>
+            <rect x="26" y="70" width="8" height="8" fill="#000"/>
+            <rect x="42" y="70" width="8" height="8" fill="#000"/>
+            <rect x="70" y="70" width="8" height="8" fill="#000"/>
+            <rect x="102" y="70" width="8" height="8" fill="#000"/>
+            <rect x="134" y="70" width="8" height="8" fill="#000"/>
+            <rect x="166" y="70" width="8" height="8" fill="#000"/>
+            <rect x="182" y="70" width="8" height="8" fill="#000"/>
+            <rect x="10" y="86" width="8" height="8" fill="#000"/>
+            <rect x="42" y="86" width="8" height="8" fill="#000"/>
+            <rect x="86" y="86" width="8" height="8" fill="#000"/>
+            <rect x="150" y="86" width="8" height="8" fill="#000"/>
+            <rect x="10" y="102" width="8" height="8" fill="#000"/>
+            <rect x="26" y="102" width="8" height="8" fill="#000"/>
+            <rect x="70" y="102" width="8" height="8" fill="#000"/>
+            <rect x="102" y="102" width="8" height="8" fill="#000"/>
+            <rect x="134" y="102" width="8" height="8" fill="#000"/>
+            <rect x="166" y="102" width="8" height="8" fill="#000"/>
+            <rect x="26" y="118" width="8" height="8" fill="#000"/>
+            <rect x="70" y="118" width="8" height="8" fill="#000"/>
+            <rect x="118" y="118" width="8" height="8" fill="#000"/>
+            <rect x="150" y="118" width="8" height="8" fill="#000"/>
+            <rect x="182" y="118" width="8" height="8" fill="#000"/>
+            <rect x="70" y="134" width="8" height="8" fill="#000"/>
+            <rect x="102" y="134" width="8" height="8" fill="#000"/>
+            <rect x="134" y="134" width="8" height="8" fill="#000"/>
+            <rect x="70" y="150" width="8" height="8" fill="#000"/>
+            <rect x="86" y="150" width="8" height="8" fill="#000"/>
+            <rect x="118" y="150" width="8" height="8" fill="#000"/>
+            <rect x="150" y="150" width="8" height="8" fill="#000"/>
+            <rect x="70" y="166" width="8" height="8" fill="#000"/>
+            <rect x="102" y="166" width="8" height="8" fill="#000"/>
+            <rect x="134" y="166" width="8" height="8" fill="#000"/>
+            <rect x="182" y="166" width="8" height="8" fill="#000"/>
+            <rect x="70" y="182" width="8" height="8" fill="#000"/>
+            <rect x="86" y="182" width="8" height="8" fill="#000"/>
+            <rect x="118" y="182" width="8" height="8" fill="#000"/>
+            <rect x="166" y="182" width="8" height="8" fill="#000"/>
+          </svg>
+        </div>
+        <p class="desktop-url">ironcraftpro-app.vercel.app</p>
+        <p class="desktop-hint">Or type the URL into Safari on your iPhone</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section class="proof-section">
+    <p class="section-label">Built by an ironworker, for ironworkers</p>
+    <div class="gold-line"></div>
+    <div class="proof-grid">
+      <div class="proof-card"><div class="num">6</div><div class="lbl">Phase Job Workflow</div></div>
+      <div class="proof-card"><div class="num">4</div><div class="lbl">PDF Document Types</div></div>
+      <div class="proof-card"><div class="num">EN</div><div class="lbl">/ ES Bilingual</div></div>
+      <div class="proof-card"><div class="num">$29</div><div class="lbl">Per Month · Cancel Anytime</div></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 Lemus Legacy LLC · IronCraftPro<br/>
+      <a href="https://ironcraftpro-app.vercel.app">Open App</a> &nbsp;·&nbsp;
+      <a href="mailto:sales@lemuslegacy.com">Contact</a>
+    </p>
+  </footer>
+
+  <script>
+    const APP_URL = 'https://ironcraftpro-app.vercel.app';
+
+    let deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+
+    function showBlock(id) {
+      ['android-block','ios-block','desktop-block'].forEach(b => {
+        document.getElementById(b).style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'block';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const ua = navigator.userAgent || '';
+      const isIOS = /iPhone|iPad|iPod/i.test(ua);
+      const isAndroid = /Android/i.test(ua);
+
+      if (isAndroid) {
+        showBlock('android-block');
+        // Top CTA
+        document.getElementById('top-cta-android').style.display = 'block';
+        const topBtn = document.getElementById('top-android-btn');
+        const mainBtn = document.getElementById('android-install-btn');
+        const handleInstall = async () => {
+          if (deferredPrompt) {
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            if (outcome === 'accepted') {
+              topBtn.textContent = '✓ INSTALLING...';
+              mainBtn.textContent = '✓ INSTALLING...';
+              topBtn.style.opacity = '0.7';
+              mainBtn.style.opacity = '0.7';
+            }
+            deferredPrompt = null;
+          } else {
+            window.location.href = APP_URL;
+          }
+        };
+        topBtn.addEventListener('click', handleInstall);
+        mainBtn.addEventListener('click', handleInstall);
+      } else if (isIOS) {
+        showBlock('ios-block');
+        document.getElementById('top-cta-ios').style.display = 'block';
+      } else {
+        showBlock('desktop-block');
+        document.getElementById('top-cta-desktop').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
