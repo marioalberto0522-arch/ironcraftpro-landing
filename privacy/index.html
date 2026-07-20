@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — IronCraftPro</title>
+  <meta name="description" content="IronCraftPro Privacy Policy — how Lemus Legacy LLC collects, uses, stores, and protects your information."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #141414;
+      --surface2: #1c1c1c;
+      --gold: #C9A84C;
+      --gold-dim: rgba(201,168,76,0.15);
+      --border: #2a2a2a;
+      --border2: #333;
+      --text: #efefef;
+      --text2: #999;
+      --text3: #555;
+      --r: 12px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 64px; }
+
+    /* ── HEADER ── */
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .brand span { color: var(--gold); }
+
+    .lang-toggle {
+      display: inline-flex;
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .lang-toggle button {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 6px 14px;
+      background: transparent;
+      color: var(--text2);
+      border: none;
+      cursor: pointer;
+    }
+    .lang-toggle button.active {
+      background: var(--gold);
+      color: #0a0a0a;
+    }
+
+    .page-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(34px, 9vw, 48px);
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .gold-line {
+      width: 48px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin-bottom: 16px;
+    }
+
+    .updated {
+      font-size: 12px;
+      color: var(--text3);
+      margin-bottom: 28px;
+    }
+
+    .body { font-size: 15px; color: var(--text); line-height: 1.7; }
+
+    .section { margin-bottom: 26px; }
+    .section h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.03em;
+      margin-bottom: 8px;
+    }
+    .section b { color: var(--text); }
+    .section ul { margin: 8px 0 12px 18px; padding-left: 8px; }
+    .section li { margin-bottom: 6px; }
+    .section a { color: var(--gold); text-decoration: none; }
+    .section a:hover { text-decoration: underline; }
+
+    .contact-card {
+      margin-top: 8px;
+      padding: 12px 16px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .contact-card .co { font-weight: 700; }
+    .contact-card .em { color: var(--text2); margin-top: 4px; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    footer p { font-size: 12px; color: var(--text3); line-height: 1.8; }
+    footer a { color: var(--text2); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    [data-lang]:not(.active-lang) { display: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="/">Iron<span>Craft</span>Pro</a>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+        <button id="btn-es" onclick="setLang('es')">ES</button>
+      </div>
+    </div>
+
+    <!-- ══════════ ENGLISH ══════════ -->
+    <div data-lang="en" class="active-lang">
+      <div class="page-title">Privacy Policy</div>
+      <div class="gold-line"></div>
+      <div class="updated">Last updated: July 7, 2026</div>
+
+      <div class="body">
+        <div class="section">
+          <h2>1. Who We Are</h2>
+          <p>IronCraftPro is a field service management application built for ornamental ironworkers, developed and operated by Lemus Legacy LLC ("we," "us," "our"). This Privacy Policy explains how we collect, use, store, and protect your information when you use the IronCraftPro mobile and web application.</p>
+        </div>
+
+        <div class="section">
+          <h2>2. Information We Collect</h2>
+          <p><b>Information you provide:</b></p>
+          <ul>
+            <li>Business information: company name, your name, phone number, email, license number, company logo</li>
+            <li>Client information: names, phone numbers, email addresses, project addresses entered for job management</li>
+            <li>Job details: project types, measurements, materials, labor hours, estimates, contracts, payment tracking, change orders, and schedule entries</li>
+            <li>Portfolio photos you upload for your work catalog</li>
+            <li>Payment information for subscription management (processed by Stripe — we do not store credit card numbers)</li>
+          </ul>
+          <p><b>Information collected automatically:</b></p>
+          <ul>
+            <li>Device type and operating system (for app compatibility)</li>
+            <li>App usage data (which features you use, for improving the product)</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>3. How We Use Your Information</h2>
+          <ul>
+            <li>To provide and maintain the IronCraftPro application</li>
+            <li>To sync your data across devices via cloud backup</li>
+            <li>To generate PDF documents (contracts, invoices, payment requests) on your behalf</li>
+            <li>To process your subscription payments through Stripe</li>
+            <li>To improve and develop new features for the application</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>4. How We Store Your Data</h2>
+          <p>Your data is stored locally on your device and, when cloud sync is enabled, securely on Upstash Redis cloud servers. Data is encrypted in transit using HTTPS/TLS. We retain your data for as long as your account is active. You may request data deletion at any time (see Section 7).</p>
+        </div>
+
+        <div class="section">
+          <h2>5. Third-Party Services</h2>
+          <p>We use the following third-party services that may process your data:</p>
+          <ul>
+            <li><b>Stripe</b> — Payment processing for subscriptions. Stripe handles all payment card data. See <a href="https://stripe.com/privacy">stripe.com/privacy</a></li>
+            <li><b>Upstash</b> — Cloud data storage for sync functionality. See <a href="https://upstash.com/privacy">upstash.com/privacy</a></li>
+            <li><b>Vercel</b> — Application hosting. See <a href="https://vercel.com/legal/privacy-policy">vercel.com/legal/privacy-policy</a></li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>6. What We Do NOT Do</h2>
+          <ul>
+            <li>We do NOT sell your data to third parties</li>
+            <li>We do NOT use your data for advertising or marketing to third parties</li>
+            <li>We do NOT track you across other apps or websites</li>
+            <li>We do NOT store credit card or banking information (Stripe handles all payment data)</li>
+            <li>We do NOT share your client data with anyone</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>7. Your Rights</h2>
+          <p>You have the right to:</p>
+          <ul>
+            <li>Access all data stored about you</li>
+            <li>Export your data at any time</li>
+            <li>Request deletion of all your data from our cloud servers</li>
+            <li>Delete local data by clearing the app or uninstalling</li>
+          </ul>
+          <p>To exercise any of these rights, contact us at <a href="mailto:sales@lemuslegacy.com">sales@lemuslegacy.com</a>. We will respond within 30 days.</p>
+        </div>
+
+        <div class="section">
+          <h2>8. Data Security</h2>
+          <p>We implement industry-standard security measures to protect your data, including encrypted data transmission (HTTPS/TLS), secure cloud storage, and access controls. However, no method of electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+        </div>
+
+        <div class="section">
+          <h2>9. Children's Privacy</h2>
+          <p>IronCraftPro is designed for professional use by adults. We do not knowingly collect data from children under 13. If we learn we have collected data from a child under 13, we will delete it promptly.</p>
+        </div>
+
+        <div class="section">
+          <h2>10. Changes to This Policy</h2>
+          <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy within the app and updating the "Last updated" date above.</p>
+        </div>
+
+        <div class="section">
+          <h2>11. Contact Us</h2>
+          <p>If you have questions about this Privacy Policy, contact us at:</p>
+          <div class="contact-card">
+            <div class="co">Lemus Legacy LLC</div>
+            <div class="em">Email: sales@lemuslegacy.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════ ESPAÑOL ══════════ -->
+    <div data-lang="es">
+      <div class="page-title">Política de Privacidad</div>
+      <div class="gold-line"></div>
+      <div class="updated">Última actualización: 7 de julio, 2026</div>
+
+      <div class="body">
+        <div class="section">
+          <h2>1. Quiénes Somos</h2>
+          <p>IronCraftPro es una aplicación de gestión de servicios de campo diseñada para herreros ornamentales, desarrollada y operada por Lemus Legacy LLC ("nosotros", "nuestro"). Esta Política de Privacidad explica cómo recopilamos, usamos, almacenamos y protegemos su información cuando usa la aplicación IronCraftPro.</p>
+        </div>
+
+        <div class="section">
+          <h2>2. Información que Recopilamos</h2>
+          <p><b>Información que usted proporciona:</b></p>
+          <ul>
+            <li>Información comercial: nombre de empresa, su nombre, teléfono, correo, número de licencia, logo</li>
+            <li>Información de clientes: nombres, teléfonos, correos, direcciones de proyecto ingresados para gestión de trabajos</li>
+            <li>Detalles de trabajos: tipos de proyecto, medidas, materiales, horas de trabajo, estimados, contratos, seguimiento de pagos, órdenes de cambio y entradas de agenda</li>
+            <li>Fotos de portafolio que suba para su catálogo de trabajo</li>
+            <li>Información de pago para gestión de suscripción (procesada por Stripe — no almacenamos números de tarjetas)</li>
+          </ul>
+          <p><b>Información recopilada automáticamente:</b></p>
+          <ul>
+            <li>Tipo de dispositivo y sistema operativo (para compatibilidad)</li>
+            <li>Datos de uso de la app (qué funciones usa, para mejorar el producto)</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>3. Cómo Usamos Su Información</h2>
+          <ul>
+            <li>Para proveer y mantener la aplicación IronCraftPro</li>
+            <li>Para sincronizar sus datos entre dispositivos vía respaldo en la nube</li>
+            <li>Para generar documentos PDF (contratos, facturas, solicitudes de pago) en su nombre</li>
+            <li>Para procesar sus pagos de suscripción a través de Stripe</li>
+            <li>Para mejorar y desarrollar nuevas funciones para la aplicación</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>4. Cómo Almacenamos Sus Datos</h2>
+          <p>Sus datos se almacenan localmente en su dispositivo y, cuando la sincronización en la nube está activada, de forma segura en servidores Upstash Redis. Los datos se cifran en tránsito usando HTTPS/TLS. Retenemos sus datos mientras su cuenta esté activa. Puede solicitar la eliminación de datos en cualquier momento (ver Sección 7).</p>
+        </div>
+
+        <div class="section">
+          <h2>5. Servicios de Terceros</h2>
+          <p>Usamos los siguientes servicios de terceros que pueden procesar sus datos:</p>
+          <ul>
+            <li><b>Stripe</b> — Procesamiento de pagos para suscripciones. Stripe maneja todos los datos de tarjetas. Ver <a href="https://stripe.com/privacy">stripe.com/privacy</a></li>
+            <li><b>Upstash</b> — Almacenamiento de datos en la nube para funcionalidad de sincronización. Ver <a href="https://upstash.com/privacy">upstash.com/privacy</a></li>
+            <li><b>Vercel</b> — Alojamiento de la aplicación. Ver <a href="https://vercel.com/legal/privacy-policy">vercel.com/legal/privacy-policy</a></li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>6. Lo Que NO Hacemos</h2>
+          <ul>
+            <li>NO vendemos sus datos a terceros</li>
+            <li>NO usamos sus datos para publicidad o marketing a terceros</li>
+            <li>NO lo rastreamos a través de otras aplicaciones o sitios web</li>
+            <li>NO almacenamos información de tarjetas de crédito o bancaria (Stripe maneja todos los datos de pago)</li>
+            <li>NO compartimos los datos de sus clientes con nadie</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>7. Sus Derechos</h2>
+          <p>Usted tiene derecho a:</p>
+          <ul>
+            <li>Acceder a todos los datos almacenados sobre usted</li>
+            <li>Exportar sus datos en cualquier momento</li>
+            <li>Solicitar la eliminación de todos sus datos de nuestros servidores en la nube</li>
+            <li>Eliminar datos locales limpiando la app o desinstalando</li>
+          </ul>
+          <p>Para ejercer cualquiera de estos derechos, contáctenos a <a href="mailto:sales@lemuslegacy.com">sales@lemuslegacy.com</a>. Responderemos dentro de 30 días.</p>
+        </div>
+
+        <div class="section">
+          <h2>8. Seguridad de Datos</h2>
+          <p>Implementamos medidas de seguridad estándar de la industria para proteger sus datos, incluyendo transmisión cifrada (HTTPS/TLS), almacenamiento seguro en la nube y controles de acceso. Sin embargo, ningún método de almacenamiento electrónico es 100% seguro y no podemos garantizar seguridad absoluta.</p>
+        </div>
+
+        <div class="section">
+          <h2>9. Privacidad de Menores</h2>
+          <p>IronCraftPro está diseñado para uso profesional por adultos. No recopilamos datos de menores de 13 años a sabiendas. Si descubrimos que hemos recopilado datos de un menor de 13 años, los eliminaremos de inmediato.</p>
+        </div>
+
+        <div class="section">
+          <h2>10. Cambios a Esta Política</h2>
+          <p>Podemos actualizar esta Política de Privacidad periódicamente. Le notificaremos de cualquier cambio publicando la nueva Política dentro de la app y actualizando la fecha de "Última actualización" arriba.</p>
+        </div>
+
+        <div class="section">
+          <h2>11. Contáctenos</h2>
+          <p>Si tiene preguntas sobre esta Política de Privacidad, contáctenos a:</p>
+          <div class="contact-card">
+            <div class="co">Lemus Legacy LLC</div>
+            <div class="em">Email: sales@lemuslegacy.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      © 2026 Lemus Legacy LLC · IronCraftPro<br/>
+      <a href="/">Home</a> &nbsp;·&nbsp;
+      <a href="mailto:sales@lemuslegacy.com">Contact</a>
+    </p>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(function (el) {
+        el.classList.toggle('active-lang', el.getAttribute('data-lang') === lang);
+      });
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.documentElement.lang = lang;
+    }
+    // Default to Spanish if the visitor's browser prefers it.
+    if ((navigator.language || '').toLowerCase().startsWith('es')) {
+      setLang('es');
+    }
+  </script>
+</body>
+</html>
