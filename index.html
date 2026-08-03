@@ -333,6 +333,43 @@
     }
     .btn-install-sub:hover { border-color: var(--gold); }
 
+    /* ── PRICING ── */
+    .pricing {
+      display: flex; flex-direction: column; gap: 12px;
+      max-width: 360px; margin: 0 auto;
+    }
+    .plan {
+      display: block; text-decoration: none; color: var(--text);
+      background: var(--surface2); border: 1px solid var(--border2);
+      border-radius: 12px; padding: 16px 18px;
+      transition: border-color 0.15s;
+    }
+    .plan:hover { border-color: var(--gold); }
+    .plan-annual { border-color: var(--gold); }
+    .plan-top {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+    }
+    .plan-name {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      font-size: 15px; color: var(--gold);
+    }
+    .plan-badge {
+      display: inline-block; margin-left: 8px;
+      background: var(--gold); color: #0a0a0a;
+      font-family: 'Inter', sans-serif; font-weight: 500;
+      font-size: 10px; letter-spacing: 0.04em;
+      padding: 2px 6px; border-radius: 5px; vertical-align: middle;
+    }
+    .plan-price {
+      font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: var(--text);
+      letter-spacing: 0.02em; white-space: nowrap;
+    }
+    .plan-price small {
+      font-family: 'Inter', sans-serif; font-size: 13px; color: var(--text2);
+    }
+    .plan-note { font-size: 12px; color: var(--text2); margin-top: 4px; }
+
     /* iOS */
     .ios-block { padding: 20px; display: none; }
 
@@ -452,7 +489,7 @@
 
   <!-- BANNER -->
   <div class="banner">
-    🔩 Coming to the App Store &amp; Google Play — Download Free Today
+    🔩 Install free on Android — iOS coming to the App Store
   </div>
 
   <!-- HERO -->
@@ -474,29 +511,28 @@
   <!-- TOP INSTALL CTA -->
   <section style="padding: 0 20px 48px; max-width: 480px; margin: 0 auto; text-align: center;">
     <div id="top-cta-android-inapp" style="display:none;">
-      <a href="intent://ironcraftpro.lemuslegacy.com#Intent;scheme=https;package=com.android.chrome;end" class="btn-install" style="max-width:340px;margin:0 auto 8px;display:block;text-decoration:none;text-align:center;">OPEN IN CHROME TO INSTALL</a>
+      <a href="intent://ironcraftpro-app.vercel.app#Intent;scheme=https;package=com.android.chrome;end" class="btn-install" style="max-width:340px;margin:0 auto 8px;display:block;text-decoration:none;text-align:center;">OPEN IN CHROME</a>
       <p style="font-size:12px;color:var(--text3);margin-top:8px;">Chrome required to install on Android</p>
     </div>
     <div id="top-cta-android" style="display:none;">
-      <button class="btn-install" id="top-android-btn" style="max-width:340px;margin:0 auto 10px;">⬇ INSTALL FREE — ANDROID</button>
-      <a href="https://ironcraftpro-app.vercel.app" target="_blank" class="btn-install-sub" style="max-width:340px;margin:0 auto 10px;">OPEN IN BROWSER</a>
-      <a href="https://buy.stripe.com/cNi6oIequbOvejsbSUcs801" target="_blank" class="btn-install-sub" style="max-width:340px;margin:0 auto;border-color:var(--gold);color:var(--gold);">SUBSCRIBE — $29/MO</a>
+      <a href="https://ironcraftpro-app.vercel.app" target="_blank" class="btn-install" style="max-width:340px;margin:0 auto 10px;display:block;text-decoration:none;text-align:center;">GET THE APP — ANDROID →</a>
+      <a href="#pricing" class="btn-install-sub" style="max-width:340px;margin:0 auto;">SEE PLANS ↓</a>
     </div>
     <div id="top-cta-ios" style="display:none;">
-      <a href="https://ironcraftpro-app.vercel.app" target="_blank" class="btn-install" style="max-width:340px;margin:0 auto 8px;display:block;">OPEN IN SAFARI TO INSTALL →</a>
-      <p style="font-size:12px;color:var(--text3);margin-top:8px;">Safari → Share → Add to Home Screen</p>
-      <a href="https://buy.stripe.com/cNi6oIequbOvejsbSUcs801" target="_blank" class="btn-install-sub" style="max-width:340px;margin:8px auto 0;display:block;border-color:var(--gold);color:var(--gold);">SUBSCRIBE — $29/MO</a>
+      <a href="https://ironcraftpro-app.vercel.app" target="_blank" class="btn-install" style="max-width:340px;margin:0 auto 8px;display:block;">OPEN THE APP IN SAFARI →</a>
+      <p style="font-size:12px;color:var(--text3);margin-top:8px;">Then Share → Add to Home Screen</p>
+      <a href="#pricing" class="btn-install-sub" style="max-width:340px;margin:8px auto 0;display:block;">SEE PLANS ↓</a>
     </div>
     <div id="top-cta-ios-chrome" style="display:none;">
-      <button onclick="navigator.clipboard.writeText('https://ironcraftpro.lemuslegacy.com').then(()=>{this.textContent='✓ LINK COPIED — OPEN SAFARI';setTimeout(()=>this.textContent='COPY LINK → OPEN IN SAFARI',2000)})" class="btn-install" style="max-width:340px;margin:0 auto 8px;display:block;">COPY LINK → OPEN IN SAFARI</button>
+      <button onclick="navigator.clipboard.writeText('https://ironcraftpro-app.vercel.app').then(()=>{this.textContent='✓ LINK COPIED — OPEN SAFARI';setTimeout(()=>this.textContent='COPY LINK → OPEN IN SAFARI',2000)})" class="btn-install" style="max-width:340px;margin:0 auto 8px;display:block;">COPY LINK → OPEN IN SAFARI</button>
       <p style="font-size:12px;color:var(--text3);margin-top:8px;">Paste in Safari → Share → Add to Home Screen</p>
     </div>
     <div id="top-cta-desktop" style="display:none;">
       <a href="https://ironcraftpro-app.vercel.app" target="_blank" class="btn-install" style="max-width:340px;margin:0 auto 10px;display:block;">OPEN APP ON YOUR PHONE →</a>
-      <a href="https://buy.stripe.com/cNi6oIequbOvejsbSUcs801" target="_blank" class="btn-install-sub" style="max-width:340px;margin:0 auto;display:block;border-color:var(--gold);color:var(--gold);">SUBSCRIBE — $29/MO</a>
+      <a href="#pricing" class="btn-install-sub" style="max-width:340px;margin:0 auto;display:block;">SEE PLANS ↓</a>
       <p style="font-size:12px;color:var(--text3);margin-top:8px;">Best experienced on mobile</p>
     </div>
-    <p style="font-size:12px;color:var(--text3);margin-top:12px;">$29/mo · 3 jobs free · Cancel anytime</p>
+    <p style="font-size:12px;color:var(--text3);margin-top:12px;">3 jobs free to start · Then from $24.08/mo · Cancel anytime</p>
   </section>
   <section class="features-section">
 
@@ -513,7 +549,7 @@
         <div class="feature-icon">🏗️</div>
         <div class="feature-text">
           <h3>6-Phase Job Workflow</h3>
-          <p>Every job moves through First Contact → Site Visit → Estimate → Contract → Final Payment → Maintenance. Nothing falls through the cracks.</p>
+          <p>Every job moves through First Contact → Site Visit → Estimate → Contract → Final Payment → Handoff. Nothing falls through the cracks.</p>
         </div>
       </div>
 
@@ -523,7 +559,7 @@
         <div class="phase-row"><div class="phase-num">3</div><div class="phase-name">Estimate</div><div class="phase-detail">Materials + labor</div></div>
         <div class="phase-row"><div class="phase-num">4</div><div class="phase-name">Contract</div><div class="phase-detail">Auto-generated PDF</div></div>
         <div class="phase-row"><div class="phase-num">5</div><div class="phase-name">Final Payment</div><div class="phase-detail">Final payment form</div></div>
-        <div class="phase-row"><div class="phase-num">6</div><div class="phase-name">Maintenance</div><div class="phase-detail">Recurring revenue</div></div>
+        <div class="phase-row"><div class="phase-num">6</div><div class="phase-name">Handoff</div><div class="phase-detail">Close out + walkthrough</div></div>
       </div>
 
     </div>
@@ -655,13 +691,30 @@
 
     <p class="section-label">Get the app</p>
     <div class="gold-line"></div>
-    <h2 class="section-title">ADD TO YOUR PHONE</h2>
-    <p class="section-desc">Free to install · Works like a native app · No App Store required yet</p>
+    <h2 class="section-title">GET THE APP</h2>
+    <p class="section-desc">Free to start · Works like a native app · Open it right from your phone's browser</p>
 
     <div class="install-card">
       <div class="install-header">
-        <h2>INSTALL IRONCRAFTPRO</h2>
-        <p>$29/month · Cancel anytime · 3 jobs free to start</p>
+        <h2>GET IRONCRAFTPRO</h2>
+        <p>3 jobs free to start · Then pick a plan · Cancel anytime</p>
+      </div>
+
+      <div class="pricing" id="pricing">
+        <a class="plan" href="https://buy.stripe.com/7sY5kEbei19R8Z8aOQcs802" target="_blank" rel="noopener">
+          <div class="plan-top">
+            <span class="plan-name">Monthly</span>
+            <span class="plan-price">$29.99<small>/mo</small></span>
+          </div>
+          <div class="plan-note">Billed monthly · Cancel anytime</div>
+        </a>
+        <a class="plan plan-annual" href="https://buy.stripe.com/fZudRafuybOv0sC8GIcs803" target="_blank" rel="noopener">
+          <div class="plan-top">
+            <span class="plan-name">Annual<span class="plan-badge">2 Months Free</span></span>
+            <span class="plan-price">$289<small>/yr</small></span>
+          </div>
+          <div class="plan-note">$24.08/month billed annually · Cancel anytime</div>
+        </a>
       </div>
 
       <div class="divider"></div>
@@ -688,14 +741,12 @@
             <div style="font-size:14px; color:var(--text);">Tap <strong style="color:var(--gold);">Install</strong> when prompted</div>
           </div>
         </div>
-        <a href="intent://ironcraftpro.lemuslegacy.com#Intent;scheme=https;package=com.android.chrome;end" class="btn-install" style="display:block;max-width:340px;margin:0 auto 10px;text-decoration:none;text-align:center;">OPEN IN CHROME</a>
-        <a href="https://buy.stripe.com/cNi6oIequbOvejsbSUcs801" target="_blank" class="btn-install-sub" style="display:block;max-width:340px;margin:0 auto;border-color:var(--gold);color:var(--gold);text-decoration:none;text-align:center;">SUBSCRIBE — $29/MO</a>
+        <a href="intent://ironcraftpro-app.vercel.app#Intent;scheme=https;package=com.android.chrome;end" class="btn-install" style="display:block;max-width:340px;margin:0 auto;text-decoration:none;text-align:center;">OPEN IN CHROME</a>
       </div>
 
       <div class="android-block" id="android-block">
-        <button class="btn-install" id="android-install-btn">⬇ INSTALL APP</button>
-        <a class="btn-install-sub" href="https://ironcraftpro-app.vercel.app" target="_blank">OPEN IN BROWSER INSTEAD</a>
-        <p style="font-size:12px;color:var(--text3);text-align:center;margin-top:12px;">Tap Install → Add to Home Screen when prompted</p>
+        <a class="btn-install" href="https://ironcraftpro-app.vercel.app" target="_blank" style="text-decoration:none;text-align:center;">OPEN THE APP →</a>
+        <p style="font-size:12px;color:var(--text3);text-align:center;margin-top:12px;">In Chrome, tap ⋮ → <strong style="color:var(--text2);">Install app</strong> to add it to your home screen</p>
       </div>
 
       <!-- IOS -->
@@ -709,7 +760,7 @@
         <div style="background:var(--surface2); border:1px solid var(--border); border-radius:12px; padding:16px; margin-bottom:20px; text-align:left;">
           <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
             <div style="width:28px; height:28px; border-radius:50%; background:var(--gold); color:#000; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0;">1</div>
-            <div style="font-size:14px; color:var(--text);">Copy this link: <strong style="color:var(--gold);">ironcraftpro.lemuslegacy.com</strong></div>
+            <div style="font-size:14px; color:var(--text);">Copy this link: <strong style="color:var(--gold);">ironcraftpro-app.vercel.app</strong></div>
           </div>
           <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
             <div style="width:28px; height:28px; border-radius:50%; background:var(--gold); color:#000; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0;">2</div>
@@ -720,8 +771,7 @@
             <div style="font-size:14px; color:var(--text);">Paste the link → tap <strong style="color:var(--gold);">Share → Add to Home Screen</strong></div>
           </div>
         </div>
-        <button onclick="navigator.clipboard.writeText('https://ironcraftpro.lemuslegacy.com').then(()=>{this.textContent='✓ COPIED!';setTimeout(()=>this.textContent='COPY LINK',2000)})" style="width:100%; max-width:340px; padding:14px; background:var(--gold); color:#000; border:none; border-radius:10px; font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:2px; cursor:pointer; margin-bottom:10px;">COPY LINK</button>
-        <a href="https://buy.stripe.com/cNi6oIequbOvejsbSUcs801" target="_blank" style="display:block; width:100%; max-width:340px; margin:0 auto; padding:12px; background:transparent; color:var(--gold); border:1px solid var(--gold); border-radius:10px; font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:2px; text-align:center; text-decoration:none;">SUBSCRIBE — $29/MO</a>
+        <button onclick="navigator.clipboard.writeText('https://ironcraftpro-app.vercel.app').then(()=>{this.textContent='✓ COPIED!';setTimeout(()=>this.textContent='COPY LINK',2000)})" style="width:100%; max-width:340px; padding:14px; background:var(--gold); color:#000; border:none; border-radius:10px; font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:2px; cursor:pointer;">COPY LINK</button>
       </div>
 
       <div class="ios-block" id="ios-block">
@@ -729,8 +779,8 @@
           <li class="step-item">
             <div class="step-num">1</div>
             <div class="step-content">
-              <strong>Open in Safari</strong>
-              <span>Must be Safari — not Chrome or another browser.</span>
+              <strong>Open the app in Safari</strong>
+              <span>Tap the button below to open ironcraftpro-app.vercel.app. Must be Safari — not Chrome or another browser.</span>
               <br><span class="step-icon">⬇ Open in Safari</span>
             </div>
           </li>
@@ -751,72 +801,17 @@
             </div>
           </li>
         </ul>
-        <a class="ios-open-btn" href="https://ironcraftpro-app.vercel.app" target="_blank">OPEN IN SAFARI →</a>
-        <p style="font-size:12px;color:var(--text3);text-align:center;margin-top:12px;">Takes 30 seconds · No App Store required</p>
+        <a class="ios-open-btn" href="https://ironcraftpro-app.vercel.app" target="_blank">OPEN THE APP IN SAFARI →</a>
+        <p style="font-size:12px;color:var(--text3);text-align:center;margin-top:12px;">Takes 30 seconds · App Store version coming soon</p>
       </div>
 
       <!-- DESKTOP -->
       <div class="desktop-block" id="desktop-block">
-        <p style="font-size:13px;color:var(--text2);text-align:center;margin-bottom:16px;">Scan with your phone camera to install</p>
+        <p style="font-size:13px;color:var(--text2);text-align:center;margin-bottom:16px;">Scan with your phone camera to open the app</p>
         <div class="qr-wrap">
-          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
-            <rect width="200" height="200" fill="white"/>
-            <rect x="10" y="10" width="50" height="50" fill="#000" rx="4"/>
-            <rect x="18" y="18" width="34" height="34" fill="#fff"/>
-            <rect x="24" y="24" width="22" height="22" fill="#000"/>
-            <rect x="140" y="10" width="50" height="50" fill="#000" rx="4"/>
-            <rect x="148" y="18" width="34" height="34" fill="#fff"/>
-            <rect x="154" y="24" width="22" height="22" fill="#000"/>
-            <rect x="10" y="140" width="50" height="50" fill="#000" rx="4"/>
-            <rect x="18" y="148" width="34" height="34" fill="#fff"/>
-            <rect x="24" y="154" width="22" height="22" fill="#000"/>
-            <rect x="70" y="10" width="8" height="8" fill="#000"/>
-            <rect x="86" y="10" width="8" height="8" fill="#000"/>
-            <rect x="102" y="10" width="8" height="8" fill="#000"/>
-            <rect x="118" y="10" width="8" height="8" fill="#000"/>
-            <rect x="70" y="26" width="8" height="8" fill="#000"/>
-            <rect x="102" y="26" width="8" height="8" fill="#000"/>
-            <rect x="70" y="42" width="8" height="8" fill="#000"/>
-            <rect x="86" y="42" width="8" height="8" fill="#000"/>
-            <rect x="118" y="42" width="8" height="8" fill="#000"/>
-            <rect x="10" y="70" width="8" height="8" fill="#000"/>
-            <rect x="26" y="70" width="8" height="8" fill="#000"/>
-            <rect x="42" y="70" width="8" height="8" fill="#000"/>
-            <rect x="70" y="70" width="8" height="8" fill="#000"/>
-            <rect x="102" y="70" width="8" height="8" fill="#000"/>
-            <rect x="134" y="70" width="8" height="8" fill="#000"/>
-            <rect x="166" y="70" width="8" height="8" fill="#000"/>
-            <rect x="182" y="70" width="8" height="8" fill="#000"/>
-            <rect x="10" y="86" width="8" height="8" fill="#000"/>
-            <rect x="42" y="86" width="8" height="8" fill="#000"/>
-            <rect x="86" y="86" width="8" height="8" fill="#000"/>
-            <rect x="150" y="86" width="8" height="8" fill="#000"/>
-            <rect x="10" y="102" width="8" height="8" fill="#000"/>
-            <rect x="26" y="102" width="8" height="8" fill="#000"/>
-            <rect x="70" y="102" width="8" height="8" fill="#000"/>
-            <rect x="102" y="102" width="8" height="8" fill="#000"/>
-            <rect x="134" y="102" width="8" height="8" fill="#000"/>
-            <rect x="166" y="102" width="8" height="8" fill="#000"/>
-            <rect x="26" y="118" width="8" height="8" fill="#000"/>
-            <rect x="70" y="118" width="8" height="8" fill="#000"/>
-            <rect x="118" y="118" width="8" height="8" fill="#000"/>
-            <rect x="150" y="118" width="8" height="8" fill="#000"/>
-            <rect x="182" y="118" width="8" height="8" fill="#000"/>
-            <rect x="70" y="134" width="8" height="8" fill="#000"/>
-            <rect x="102" y="134" width="8" height="8" fill="#000"/>
-            <rect x="134" y="134" width="8" height="8" fill="#000"/>
-            <rect x="70" y="150" width="8" height="8" fill="#000"/>
-            <rect x="86" y="150" width="8" height="8" fill="#000"/>
-            <rect x="118" y="150" width="8" height="8" fill="#000"/>
-            <rect x="150" y="150" width="8" height="8" fill="#000"/>
-            <rect x="70" y="166" width="8" height="8" fill="#000"/>
-            <rect x="102" y="166" width="8" height="8" fill="#000"/>
-            <rect x="134" y="166" width="8" height="8" fill="#000"/>
-            <rect x="182" y="166" width="8" height="8" fill="#000"/>
-            <rect x="70" y="182" width="8" height="8" fill="#000"/>
-            <rect x="86" y="182" width="8" height="8" fill="#000"/>
-            <rect x="118" y="182" width="8" height="8" fill="#000"/>
-            <rect x="166" y="182" width="8" height="8" fill="#000"/>
+          <svg viewBox="0 0 37 37" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" role="img" aria-label="QR code linking to ironcraftpro-app.vercel.app">
+            <rect width="37" height="37" fill="#fff"/>
+            <path d="M4 4h7v1h-7zM13 4h4v1h-4zM18 4h1v1h-1zM23 4h1v1h-1zM26 4h7v1h-7zM4 5h1v1h-1zM10 5h1v1h-1zM13 5h1v1h-1zM15 5h2v1h-2zM20 5h2v1h-2zM24 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM4 6h1v1h-1zM6 6h3v1h-3zM10 6h1v1h-1zM14 6h3v1h-3zM18 6h2v1h-2zM21 6h2v1h-2zM26 6h1v1h-1zM28 6h3v1h-3zM32 6h1v1h-1zM4 7h1v1h-1zM6 7h3v1h-3zM10 7h1v1h-1zM14 7h1v1h-1zM16 7h2v1h-2zM22 7h2v1h-2zM26 7h1v1h-1zM28 7h3v1h-3zM32 7h1v1h-1zM4 8h1v1h-1zM6 8h3v1h-3zM10 8h1v1h-1zM13 8h2v1h-2zM26 8h1v1h-1zM28 8h3v1h-3zM32 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM12 9h1v1h-1zM14 9h3v1h-3zM19 9h1v1h-1zM23 9h1v1h-1zM26 9h1v1h-1zM32 9h1v1h-1zM4 10h7v1h-7zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM26 10h7v1h-7zM14 11h1v1h-1zM17 11h1v1h-1zM19 11h3v1h-3zM24 11h1v1h-1zM4 12h1v1h-1zM7 12h1v1h-1zM9 12h2v1h-2zM12 12h1v1h-1zM14 12h3v1h-3zM18 12h1v1h-1zM22 12h2v1h-2zM25 12h1v1h-1zM27 12h1v1h-1zM7 13h3v1h-3zM12 13h3v1h-3zM17 13h1v1h-1zM20 13h1v1h-1zM25 13h2v1h-2zM29 13h1v1h-1zM32 13h1v1h-1zM4 14h2v1h-2zM7 14h4v1h-4zM12 14h1v1h-1zM14 14h1v1h-1zM16 14h3v1h-3zM21 14h1v1h-1zM23 14h1v1h-1zM29 14h3v1h-3zM4 15h2v1h-2zM8 15h2v1h-2zM13 15h3v1h-3zM17 15h1v1h-1zM19 15h1v1h-1zM26 15h3v1h-3zM30 15h2v1h-2zM4 16h5v1h-5zM10 16h2v1h-2zM15 16h1v1h-1zM18 16h1v1h-1zM21 16h1v1h-1zM23 16h4v1h-4zM29 16h1v1h-1zM31 16h2v1h-2zM5 17h5v1h-5zM11 17h1v1h-1zM13 17h2v1h-2zM17 17h2v1h-2zM21 17h4v1h-4zM10 18h4v1h-4zM17 18h2v1h-2zM26 18h1v1h-1zM29 18h4v1h-4zM6 19h2v1h-2zM11 19h1v1h-1zM14 19h3v1h-3zM19 19h1v1h-1zM21 19h1v1h-1zM25 19h2v1h-2zM28 19h2v1h-2zM31 19h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM10 20h2v1h-2zM13 20h1v1h-1zM17 20h1v1h-1zM21 20h1v1h-1zM23 20h1v1h-1zM25 20h1v1h-1zM31 20h1v1h-1zM5 21h2v1h-2zM8 21h2v1h-2zM11 21h1v1h-1zM13 21h1v1h-1zM15 21h4v1h-4zM20 21h1v1h-1zM25 21h3v1h-3zM29 21h1v1h-1zM32 21h1v1h-1zM4 22h1v1h-1zM6 22h1v1h-1zM9 22h3v1h-3zM13 22h3v1h-3zM18 22h1v1h-1zM20 22h1v1h-1zM24 22h1v1h-1zM26 22h1v1h-1zM31 22h2v1h-2zM6 23h3v1h-3zM11 23h2v1h-2zM14 23h2v1h-2zM18 23h1v1h-1zM21 23h2v1h-2zM26 23h2v1h-2zM31 23h2v1h-2zM4 24h1v1h-1zM6 24h2v1h-2zM9 24h4v1h-4zM15 24h1v1h-1zM19 24h2v1h-2zM24 24h5v1h-5zM30 24h1v1h-1zM12 25h2v1h-2zM15 25h1v1h-1zM18 25h1v1h-1zM21 25h2v1h-2zM24 25h1v1h-1zM28 25h1v1h-1zM30 25h3v1h-3zM4 26h7v1h-7zM13 26h1v1h-1zM15 26h2v1h-2zM21 26h2v1h-2zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM31 26h1v1h-1zM4 27h1v1h-1zM10 27h1v1h-1zM12 27h4v1h-4zM18 27h3v1h-3zM24 27h1v1h-1zM28 27h3v1h-3zM32 27h1v1h-1zM4 28h1v1h-1zM6 28h3v1h-3zM10 28h1v1h-1zM13 28h2v1h-2zM16 28h1v1h-1zM19 28h3v1h-3zM24 28h5v1h-5zM32 28h1v1h-1zM4 29h1v1h-1zM6 29h3v1h-3zM10 29h1v1h-1zM12 29h3v1h-3zM17 29h1v1h-1zM21 29h1v1h-1zM26 29h1v1h-1zM28 29h4v1h-4zM4 30h1v1h-1zM6 30h3v1h-3zM10 30h1v1h-1zM13 30h2v1h-2zM16 30h3v1h-3zM22 30h2v1h-2zM28 30h3v1h-3zM32 30h1v1h-1zM4 31h1v1h-1zM10 31h1v1h-1zM14 31h3v1h-3zM18 31h5v1h-5zM24 31h1v1h-1zM31 31h1v1h-1zM4 32h7v1h-7zM12 32h3v1h-3zM18 32h1v1h-1zM21 32h1v1h-1zM24 32h1v1h-1zM26 32h1v1h-1zM29 32h1v1h-1zM31 32h1v1h-1z" fill="#000"/>
           </svg>
         </div>
         <p class="desktop-url">ironcraftpro-app.vercel.app</p>
@@ -834,7 +829,7 @@
       <div class="proof-card"><div class="num">6</div><div class="lbl">Phase Job Workflow</div></div>
       <div class="proof-card"><div class="num">4</div><div class="lbl">PDF Document Types</div></div>
       <div class="proof-card"><div class="num">EN</div><div class="lbl">/ ES Bilingual</div></div>
-      <div class="proof-card"><div class="num">$29</div><div class="lbl">Per Month · Cancel Anytime</div></div>
+      <div class="proof-card"><div class="num">$29.99</div><div class="lbl">Per Month · Cancel Anytime</div></div>
     </div>
   </section>
 
@@ -849,13 +844,16 @@
   </footer>
 
   <script>
+    // The web app lives on a different origin; PWA install can only happen there.
+    // Every "get the app" CTA points to this URL.
     const APP_URL = 'https://ironcraftpro-app.vercel.app';
 
-    let deferredPrompt = null;
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-    });
+    // APP STORE READINESS: when the native iOS app is approved, set this to the
+    // App Store listing URL (e.g. 'https://apps.apple.com/app/idXXXXXXXXXX').
+    // While it is null, iPhone visitors get the Safari "Add to Home Screen" (PWA)
+    // instructions below. Once it is set, iPhone traffic routes straight to the
+    // App Store instead — no other change needed.
+    const IOS_APP_STORE_URL = null;
 
     function showBlock(id) {
       ['android-block','ios-block','desktop-block'].forEach(b => {
@@ -870,37 +868,23 @@
       const isAndroid = /Android/i.test(ua);
 
       if (isAndroid) {
-        // Detect in-app browsers (TikTok, Instagram, Facebook, etc.)
+        // Detect in-app browsers (TikTok, Instagram, Facebook, etc.) that can't
+        // install PWAs — route those users to open the app in real Chrome.
         const isInAppBrowser = /FBAN|FBAV|Instagram|TikTok|BytedanceWebview|Musical|Twitter|Line|MicroMessenger|WebView|wv/i.test(ua) || (ua.includes('Android') && !ua.includes('Chrome/'));
-        const isRealChrome = !isInAppBrowser && ua.includes('Chrome/') && !ua.includes('Chromium/');
 
-        if (isInAppBrowser || (!isRealChrome && !deferredPrompt)) {
+        if (isInAppBrowser) {
           showBlock('android-inapp-block');
           document.getElementById('top-cta-android-inapp').style.display = 'block';
         } else {
           showBlock('android-block');
           document.getElementById('top-cta-android').style.display = 'block';
-          const topBtn = document.getElementById('top-android-btn');
-          const mainBtn = document.getElementById('android-install-btn');
-          const handleInstall = async () => {
-            if (deferredPrompt) {
-              deferredPrompt.prompt();
-              const { outcome } = await deferredPrompt.userChoice;
-              if (outcome === 'accepted') {
-                topBtn.textContent = '✓ INSTALLING...';
-                mainBtn.textContent = '✓ INSTALLING...';
-                topBtn.style.opacity = '0.7';
-                mainBtn.style.opacity = '0.7';
-              }
-              deferredPrompt = null;
-            } else {
-              window.open('https://ironcraftpro.lemuslegacy.com', '_blank');
-            }
-          };
-          topBtn.addEventListener('click', handleInstall);
-          mainBtn.addEventListener('click', handleInstall);
         }
       } else if (isIOS) {
+        // Once the native app ships, send iPhone traffic to the App Store.
+        if (IOS_APP_STORE_URL) {
+          window.location.href = IOS_APP_STORE_URL;
+          return;
+        }
         const isSafari = /^((?!chrome|android).)*safari/i.test(ua);
         if (isSafari) {
           showBlock('ios-block');
